@@ -158,6 +158,16 @@ public class SettingsManager implements AppearanceInterface, DateInterface, Cale
     }
 
     @Override
+    public int getMonthHeaderBackgroundColor() {
+        return appearanceModel.getMonthHeaderBackgroundColor();
+    }
+
+    @Override
+    public boolean isMonthHeaderBackgroundColorSet() {
+        return appearanceModel.isMonthHeaderBackgroundColorSet();
+    }
+
+    @Override
     public boolean isShowDaysOfWeek() {
         return appearanceModel.isShowDaysOfWeek();
     }
@@ -283,6 +293,22 @@ public class SettingsManager implements AppearanceInterface, DateInterface, Cale
     }
 
     @Override
+    public void setMonthHeaderBackgroundColor(int monthHeaderBackgroundColor) {
+        appearanceModel.setMonthHeaderBackgroundColor(monthHeaderBackgroundColor);
+    }
+
+    //minDate or maxDate by xxjy pull request #36
+    @Override
+    public Calendar getMinDate() {
+        return calendarListsModel.getMinDate();
+    }
+
+    @Override
+    public Calendar getMaxDate() {
+        return calendarListsModel.getMaxDate();
+    }
+
+    @Override
     public Set<Long> getDisabledDays() {
         return calendarListsModel.getDisabledDays();
     }
@@ -330,5 +356,16 @@ public class SettingsManager implements AppearanceInterface, DateInterface, Cale
     @Override
     public void setFirstDayOfWeek(int firstDayOfWeek) {
         dateModel.setFirstDayOfWeek(firstDayOfWeek);
+    }
+
+    //minDate or maxDate by xxjy pull request #36
+    @Override
+    public void setMinDate(Calendar minDate) {
+        calendarListsModel.setMinDate(minDate);
+    }
+
+    @Override
+    public void setMaxDate(Calendar maxDate) {
+        calendarListsModel.setMaxDate(maxDate);
     }
 }

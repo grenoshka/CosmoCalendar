@@ -26,6 +26,7 @@ import com.applikeysolutions.cosmocalendar.settings.lists.CalendarListsInterface
 import com.applikeysolutions.cosmocalendar.settings.selection.SelectionInterface;
 import com.applikeysolutions.cosmocalendar.view.CalendarView;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
 
@@ -219,6 +220,16 @@ public class CalendarDialog extends Dialog implements View.OnClickListener,
     }
 
     @Override
+    public int getMonthHeaderBackgroundColor() {
+        return calendarView.getMonthHeaderBackgroundColor();
+    }
+
+    @Override
+    public boolean isMonthHeaderBackgroundColorSet() {
+        return calendarView.isMonthHeaderBackgroundColorSet();
+    }
+
+    @Override
     public boolean isShowDaysOfWeek() {
         return calendarView.isShowDaysOfWeek();
     }
@@ -344,6 +355,22 @@ public class CalendarDialog extends Dialog implements View.OnClickListener,
     }
 
     @Override
+    public void setMonthHeaderBackgroundColor(int monthHeaderBackgroundColor) {
+        calendarView.setMonthHeaderBackgroundColor(monthHeaderBackgroundColor);
+    }
+
+    //minDate or maxDate by xxjy pull request #36
+    @Override
+    public Calendar getMinDate() {
+        return calendarView.getMinDate();
+    }
+
+    @Override
+    public Calendar getMaxDate() {
+        return calendarView.getMaxDate();
+    }
+
+    @Override
     public Set<Long> getDisabledDays() {
         return calendarView.getDisabledDays();
     }
@@ -361,6 +388,17 @@ public class CalendarDialog extends Dialog implements View.OnClickListener,
     @Override
     public DisabledDaysCriteria getDisabledDaysCriteria() {
         return calendarView.getDisabledDaysCriteria();
+    }
+
+    //minDate or maxDate by xxjy pull request #36
+    @Override
+    public void setMinDate(Calendar minDate) {
+        calendarView.setMinDate(minDate);
+    }
+
+    @Override
+    public void setMaxDate(Calendar maxDate) {
+        calendarView.setMaxDate(maxDate);
     }
 
     @Override
