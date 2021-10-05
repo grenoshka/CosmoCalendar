@@ -384,7 +384,6 @@ public class CalendarView extends RelativeLayout implements OnDaySelectedListene
         rvMonths.setHasFixedSize(true);
         rvMonths.setNestedScrollingEnabled(false);
         rvMonths.setClipToPadding(false);
-        rvMonths.setPadding(0, 0, 0, 100);
         ((SimpleItemAnimator) rvMonths.getItemAnimator()).setSupportsChangeAnimations(false);
 
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -400,6 +399,10 @@ public class CalendarView extends RelativeLayout implements OnDaySelectedListene
         rvMonths.addOnScrollListener(pagingScrollListener);
         rvMonths.getRecycledViewPool().setMaxRecycledViews(ItemViewType.MONTH, 10);
         addView(rvMonths);
+    }
+
+    public void setBottomPadding(int padding){
+        rvMonths.setPadding(0, 0, 0, padding);
     }
 
     /**
