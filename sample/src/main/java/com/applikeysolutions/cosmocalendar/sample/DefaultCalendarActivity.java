@@ -93,6 +93,8 @@ public class DefaultCalendarActivity extends AppCompatActivity implements RadioG
         Log.d("Screen", "screen width" + dpWidth);
         calendarView.setBottomPadding(Math.round(dpWidth*(1.5f)));
 
+        calendarView.setMonthHeaderBackgroundColor(Color.BLUE);
+
         calendarView.setSelectionManager(new RangeSelectionManager(new OnDaySelectedListener() {
 
             @Override

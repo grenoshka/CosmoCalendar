@@ -51,6 +51,7 @@ public class MonthView extends FrameLayout {
         rvDays.setHasFixedSize(true);
         rvDays.setNestedScrollingEnabled(false);
         rvDays.setLayoutParams(generateLayoutParams());
+        rvDays.setPadding(0,8,0,0);
         final GridLayoutManager manager = new GridLayoutManager(getContext(), Constants.DAYS_IN_WEEK);
         rvDays.setLayoutManager(manager);
         addView(rvDays);
