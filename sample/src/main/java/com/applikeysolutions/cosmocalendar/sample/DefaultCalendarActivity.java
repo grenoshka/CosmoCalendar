@@ -7,7 +7,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -80,7 +82,16 @@ public class DefaultCalendarActivity extends AppCompatActivity implements RadioG
         maxDate.set(Calendar.MONTH, 11);
         calendarView.setMaxDate(maxDate);
 
-        calendarView.setMonthHeaderBackgroundColor(Color.RED);
+        Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics ();
+        display.getMetrics(outMetrics);
+
+        float density  = getResources().getDisplayMetrics().density;
+        float dpHeight = outMetrics.heightPixels / density;
+        float dpWidth  = outMetrics.widthPixels / density;
+
+        Log.d("Screen", "screen width" + dpWidth);
+        calendarView.setBottomPadding(Math.round(dpWidth*(1.5f)));
 
         calendarView.setSelectionManager(new RangeSelectionManager(new OnDaySelectedListener() {
 
