@@ -128,19 +128,19 @@ public class CircleAnimationTextView extends AppCompatTextView {
             createCirclePaint();
         }
 
-        final int diameter = getWidth() - DEFAULT_PADDING * 2;
+        final int diameter = getWidth()-DEFAULT_PADDING;
         final int diameterProgress = animationProgress * diameter / MAX_PROGRESS;
 
         setBackgroundColor(Color.TRANSPARENT);
-        canvas.drawCircle(getWidth() / 2, getWidth() / 2, diameterProgress / 2, circlePaint);
+        canvas.drawCircle(getWidth() / 2, getHeight() / 2, diameterProgress / 2, circlePaint);
     }
 
     private void drawCircleUnder(Canvas canvas) {
         if (circleUnderPaint == null || stateChanged) {
             createCircleUnderPaint();
         }
-        final int diameter = getWidth() - DEFAULT_PADDING * 2;
-        canvas.drawCircle(getWidth() / 2, getWidth() / 2, diameter / 2, circleUnderPaint);
+        final int diameter = getWidth()-DEFAULT_PADDING;
+        canvas.drawCircle(getWidth() / 2, getHeight() / 2, diameter / 2, circleUnderPaint);
     }
 
     private void createCirclePaint() {
