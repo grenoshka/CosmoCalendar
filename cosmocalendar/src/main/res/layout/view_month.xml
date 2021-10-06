@@ -8,7 +8,7 @@
     <LinearLayout
         android:id="@+id/ll_month_header"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="28dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -17,7 +17,6 @@
             android:id="@+id/tv_month_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:letterSpacing="0.1"
             android:textAllCaps="false"
             android:textSize="@dimen/text_big"
             android:textStyle="bold"

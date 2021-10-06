@@ -49,8 +49,8 @@ public class Month {
     }
 
     public String getMonthName() {
-        return new SimpleDateFormat("LLLL yyyy", Locale.getDefault()).format(firstDay.getCalendar().getTime());
+        String monthName = new SimpleDateFormat("LLLL, yyyy", Locale.getDefault()).format(firstDay.getCalendar().getTime());
+        return monthName.substring(0,1).toUpperCase() + monthName.substring(1);
     }
-
 
 }
